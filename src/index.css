@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: 'Oswald', sans-serif;
+}
+
+body{
+  background: #EEF2F6;
+}
+
+.active{
+  background: #efcaaa;
+}
+
+.sidebar{
+  background: white;
+  -webkit-box-shadow: 7px 1px 8px -3px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 7px 1px 8px -3px rgba(34, 60, 80, 0.2);
+  box-shadow: 7px 1px 8px -3px rgba(34, 60, 80, 0.2);
+}
+
+.remove-arrow::-webkit-inner-spin-button,
+.remove-arrow::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.remove-arrow {
+    -moz-appearance: textfield;
+}
