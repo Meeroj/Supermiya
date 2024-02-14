@@ -1,14 +1,16 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useDispatch } from 'react-redux'
-import { numberStarting, setSystem } from '../../slice/speedNumber'
+import { numberFinishing, numberStarting, setSystem } from '../../slice/speedNumber'
 import { useNavigate } from 'react-router-dom'
 
 const StartSpeedNumber = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const inputt = useRef()
+    
   return (
     <div className='flex items-center pt-3 start-[20vw] flex-col relative w-[75vw]'>
+        {useEffect(()=>{dispatch(numberFinishing())},[])}
         <h2 className='text-3xl'>Speed Number</h2>
         <div className="m-10 w-[1100px] flex justify-around items-center rounded-lg bg-white relative start-5 p-3">
             <div className='flex flex-col items-start border border-amber-500 rounded-md w-80'>

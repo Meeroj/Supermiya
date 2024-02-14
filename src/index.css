@@ -29,3 +29,36 @@ body{
 .remove-arrow {
     -moz-appearance: textfield;
 }
+
+
+
+.clock{
+  animation: border 50000ms infinite linear;
+  -webkit-box-shadow: 1px 1px 13px 8px rgba(247, 179, 36, 0.31);
+-moz-box-shadow: 1px 1px 13px 8px rgba(247, 179, 36, 0.31);
+box-shadow: 1px 1px 13px 8px rgba(247, 179, 36, 0.31);
+}
+
+@keyframes border{
+  from{
+
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.reverse-clock{
+  animation: bool 50000ms infinite linear;
+
+}
+
+@keyframes bool{
+  from{
+
+  }
+  to{
+    transform: rotate(-360deg);
+  }
+}
+

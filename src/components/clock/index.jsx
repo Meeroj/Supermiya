@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { numberFinishing } from "../../slice/speedNumber";
+import timerVoice from './timerVoice.mp3'
+import AudioPlayer from "./Audio";
 
 const Clock = () => {
   const {numberTime}=useSelector(state=>state.number)
@@ -34,10 +36,13 @@ const Clock = () => {
   }, [hours, minutes, seconds]);
   return (
     <div className="flex justify-center">
-    <h1 className="border-4 border-amber-400 rounded-full w-[18vw] h-[18vw] flex justify-center items-center text-2xl custom-clock">
-      {hours < 10 ? `0${hours}` : hours}:
-      {minutes < 10 ? `0${minutes}` : minutes}:
+    <h1 className=" border-dotted  border-4 border-amber-400 rounded-full w-[18vw] h-[18vw] flex justify-center items-center text-6xl clock">
+     <p className=" absolute reverse-clock">
+       {/* {hours < 10 ? `0${hours}` : hours}: */}
+       {minutes < 10 ? `0${minutes}` : minutes}:
       {seconds < 10 ? `0${seconds}` : seconds}
+     </p>
+     <AudioPlayer src={timerVoice} />
     </h1>
   </div>
   );

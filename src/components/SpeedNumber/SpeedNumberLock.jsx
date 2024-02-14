@@ -114,9 +114,11 @@ const SpeedNumberLook = ({time}) => {
                             />
                         ))}
                     </div>
-                    <div className="hidden sm:block">
-                        {Array.from({ length: count/40 }, (_, index) => (
-                            <p key={index} className='my-[17px]'>Row {index + 1}</p>
+                    <div className="">
+                        {Array.from({ length: count/40 }, (_, index) => (<>
+                        {console.log(count)}
+                            <p key={index} className='my-[17.6px]'>Row {index + 1}</p>
+                        </>
                         ))}
                     </div>
                 </div>

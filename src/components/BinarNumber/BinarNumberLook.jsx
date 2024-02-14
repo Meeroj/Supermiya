@@ -49,8 +49,12 @@ const BinarNumberLook = ({time}) => {
         setRowNumberCount(newNumbers);
         dispatch(setNumber(newNumbers));
     }, [dep]);
+    const [userInputValue, setUserInputValue]= useState()
     
     const handleChange = (index, e) => {
+        if(e.target.value==1||e.target.value==0){
+            setUserInputValue(e.target.value)
+        }
         if (e.target.value.length >= 1 && index < number.length - 1) {
             document.getElementById(`input-${index}`).classList.add('border-amber-400')
             const nextInput = document.getElementById(`input-${index + 1}`);
