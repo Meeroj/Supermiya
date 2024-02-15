@@ -14,23 +14,23 @@ import Square from '../../../public/img/0-square.svg'
 const Sidebar = () => {
   const { isNumberStart } = useSelector((state) => state.number);
   return (
-    <div className="flex flex-col fixed w-[20vw] h-full px-4 py-3  sidebar">
+    <div className="flex lg:flex-col lg:w-[20vw] justify-between lg:justify-start items-end lg:items-start w-[100vw] lg:h-full fixed px-4 py-1 bottom-0 lg:py-3 sidebar z-50">
           <div>
-            <div className="flex gap-3 items-center mb-3">
+            <div className="gap-3 items-center mb-3 hidden lg:flex">
               <Link to={'/'}><img src={Logo} alt="Logo" className="w-[200px]" /></Link>
             </div>
             <hr className="border-[#D69358]" />
           </div>
       {isNumberStart ? (
         <>
-          <div className="flex h-full items-center">
+          <div className="hidden lg:block h-full items-center">
             <Clock />
           </div>
         </>
       ) : (
         <>
-          <div>
-            <div className="flex flex-col  mt-3 gap-2">
+          
+            <div className="flex lg:flex-col justify-evenly w-full  lg:mt-3 gap-2">
               <SideButton link={"/"} icon={Home} title={"Home"} />
               <SideButton
                 link={"/speed-number"}
@@ -53,14 +53,14 @@ const Sidebar = () => {
                 title={"Find card"}
               />
             </div>
-          </div>
+         
         </>
       )}
-          <div className="flex gap-3 items-center absolute bottom-3">
-            <div className="w-[50px] rounded-full border-2 border-[#D69358]">
+          <div className="flex gap-3 items-center lg:absolute bottom-3">
+            <div className="w-[30px] lg:w-[50px] rounded-full border-2 border-[#D69358]">
               <img src={User} alt="" />
             </div>
-            <div>
+            <div className="hidden lg:block">
               <p className="text-xl">Meeroj</p>
               <p className="text-sm text-[#D69358]">online</p>
             </div>

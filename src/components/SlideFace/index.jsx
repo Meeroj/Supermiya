@@ -31,23 +31,23 @@ export default function SlideFace() {
         modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide><img src={Anna} alt="" className='h-[500px] block'/>
+        <SwiperSlide><img src={Anna} alt="" className=' h-full lg:h-[500px] block'/>
         <p className='text-6xl text-center mt-3'>Komiljon Yo'ldoshov</p>
         <br/>
         </SwiperSlide>
-        <SwiperSlide><img src={Zohid} alt="" className='h-[500px] block'/>
+        <SwiperSlide><img src={Zohid} alt="" className='h-full lg:h-[500px] block'/>
         <p className='text-6xl text-center mt-3'>Zohid Bobojonov</p>
         <br />
         </SwiperSlide>
-        <SwiperSlide><img src={Qurbon} alt="" className='h-[500px] block'/>
+        <SwiperSlide><img src={Qurbon} alt="" className='h-full lg:h-[500px] block'/>
         <p className='text-6xl text-center mt-3'>Qurbonali G'ulomov</p>
         <br/>
         </SwiperSlide>
-        <SwiperSlide><img src={Nurbek} alt="" className='h-[500px] block'/>
+        <SwiperSlide><img src={Nurbek} alt="" className='h-full lg:h-[500px] block'/>
         <p className='text-6xl text-center mt-3'>Nurbek Qo'chqorov</p>
         <br/>
         </SwiperSlide>
-        <SwiperSlide><img src={Bekzod} alt="" className='h-[500px] block'/>
+        <SwiperSlide><img src={Bekzod} alt="" className='h-full lg:h-[500px] block'/>
         <p className='text-6xl text-center mt-3'>Bekzod Nuraliyev</p>
         <br/>
         </SwiperSlide>

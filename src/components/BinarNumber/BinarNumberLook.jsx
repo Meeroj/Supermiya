@@ -29,11 +29,8 @@ const BinarNumberLook = ({time}) => {
             }
         };
 
-        window.addEventListener('keydown', handleKeyDown);
+        window.addEventListener('keydown', handleKeyDown)
 
-        return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-        };
     }, []);
 
     useEffect(() => {
@@ -86,19 +83,30 @@ const BinarNumberLook = ({time}) => {
         dispatch(numberFinishing())
     }
 
+    const handleNext=()=>{
+        setNumberBg(prev => (prev + 2) % count);
+    
+    }
+    
+    const handlePerv=()=>{
+        setNumberBg(prev => (prev - 2 + count) % count); 
+
+    }
+
     return (
         isNumberStart ? (
-            <div className='flex items-center pt-3 start-[20vw] flex-col relative w-[75vw]'>
+            <div className='flex items-center pt-3 lg:start-[20vw] flex-col lg:relative w-full lg:w-[75vw] mb-10'>
                 <h2 className='text-3xl'>Binar Number 5 minut</h2>
-                <div className="m-10 w-[1100px] flex justify-around items-center rounded-lg bg-white relative start-5 p-3">
-                    <div className="flex flex-wrap w-[1000px]">
+                <p className='lg:hidden w-[40px] h-[40px] rounded-full border bg-amber-400 opacity-40 sticky top-80 left-full' onClick={handlePerv}>-</p>
+                <div className="lg:m-10 w-full lg:w-[1100px] flex justify-around items-center rounded-lg bg-white lg:relative lg:start-5 p-3 mb-4">
+                    <div className="flex flex-wrap lg:w-[1000px]" onClick={handleNext}>
                         {number.map((el, index) => (
                             <p key={index} className={`w-[25px] text-center my-1 sm:my-2 ${index === numberBg || index - 1 === numberBg ? 'bg-amber-400' : ''}`}>
                                 {el}
                             </p>
                         ))}
                     </div>
-                    <div className="hidden sm:block">
+                    <div className="hidden lg:block">
                         {Array.from({ length: count/40 }, (_, index) => (
                             <p key={index} className='my-4'>Row {index + 1}</p>
                         ))}
@@ -107,9 +115,9 @@ const BinarNumberLook = ({time}) => {
                 <button onClick={handleFinish} className='border border-amber-400 text-amber-600 px-3 py-1 rounded-md hover:text-white hover:bg-amber-500 ease-in duration-100'>Finish</button>
             </div>
         ) : (
-            <div className='flex items-center pt-3 start-[20vw] flex-col relative w-[75vw]'>
+            <div className='flex items-center pt-3 lg:start-[20vw] flex-col lg:relative w-full lg:w-[75vw] mb-10'>
                 <h2 className='text-3xl'>Binar Number 5 minut</h2>
-                <div className="my-3 w-[1100px] flex justify-around items-center rounded-lg bg-white relative start-5 p-3">
+                <div className="lg:m-10 w-full lg:w-[1100px] flex justify-around items-center rounded-lg bg-white lg:relative lg:start-5 p-3 mb-4">
                     <div className="flex flex-wrap w-[1000px]">
                         {number.map((el, index) => (
                             

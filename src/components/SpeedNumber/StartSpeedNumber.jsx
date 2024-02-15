@@ -7,27 +7,27 @@ const StartSpeedNumber = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const inputt = useRef()
-    
+     
   return (
-    <div className='flex items-center pt-3 start-[20vw] flex-col relative w-[75vw]'>
+    <div className='flex flex-col items-center justify-center relative lg:start-[20vw] w-full lg:w-[75vw] pt-3 mb-5'>
         {useEffect(()=>{dispatch(numberFinishing())},[])}
         <h2 className='text-3xl'>Speed Number</h2>
-        <div className="m-10 w-[1100px] flex justify-around items-center rounded-lg bg-white relative start-5 p-3">
-            <div className='flex flex-col items-start border border-amber-500 rounded-md w-80'>
+        <div className=" flex flex-wrap gap-3 lg:justify-around items-center rounded-lg bg-white lg:relative lg:w-[1000px] xl:w-[1100px] lg:m-10 lg:start-5 p-3">
+            <div className='flex flex-col items-start border border-amber-500 rounded-md w-full sm:w-80'>
                 <div className=" h-52 w-full bg-gray-200 rounded-md rounded-b-none"><img src="./img/clock.svg"className='w-full h-full' alt="..topilmadi" /></div>
                 <p className='text-xl text-amber-600 m-2'>Speed Number in 5 minut</p>
                 <p className='text-amber-800 m-2 font-light'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit veniam dolorum doloremque ex magni hic voluptatem voluptatum accusamus labore. Eum possimus amet, </p>
                 <button  onClick={()=>{dispatch(numberStarting(5))
                 navigate('/speed-number/look')}} className='m-2 border border-amber-500 px-5 py-1 text-amber-500 rounded-md hover:text-white hover:bg-amber-600 ease-linear duration-150'>Start</button>
             </div>
-            <div className='flex flex-col items-start border border-amber-500 rounded-md w-80'>
+            <div className='flex flex-col items-start border border-amber-500 rounded-md w-full sm:w-80'>
                 <div className=" h-52 w-full bg-gray-200 rounded-md rounded-b-none"><img src="./img/clock.svg"className='w-full h-full' alt="..topilmadi" /></div>
                 <p className='text-xl text-amber-600 m-2'>Speed Number in 15 minut</p>
                 <p className='text-amber-800 m-2 font-light'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit veniam dolorum doloremque ex magni hic voluptatem voluptatum accusamus labore. Eum possimus amet, </p>
                 <button  onClick={()=>{dispatch(numberStarting(15)) 
                     navigate('/speed-number/look')}} className='m-2 border border-amber-500 px-5 py-1 text-amber-500 rounded-md hover:text-white hover:bg-amber-600 ease-linear duration-150'>Start</button>
             </div>
-            <div className='flex flex-col items-start border border-amber-500 rounded-md w-80'>
+            <div className='flex flex-col items-start border border-amber-500 rounded-md w-full sm:w-80'>
                 <div className=" h-52 w-full bg-gray-200 rounded-md rounded-b-none"><img src="./img/clock.svg"className='w-full h-full' alt="..topilmadi" /></div>
                 <p className='text-xl text-amber-600 m-2'>Speed Number in 120 minut</p>
                 <p className='text-amber-800 m-2 font-light'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit veniam dolorum doloremque ex magni hic voluptatem voluptatum accusamus labore. Eum possimus amet, </p>

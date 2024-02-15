@@ -20,9 +20,9 @@ const CheckNumber = () => {
     }
   return (
     <div>
-        <div className='flex items-center pt-3 start-[20vw] flex-col relative w-[75vw]'>
-                <h2 className='text-3xl'>Speed Number 5 minut</h2>
-                <div className="my-3 w-[1100px] flex justify-around items-center rounded-lg bg-white relative start-5 p-3">
+        <div className='flex items-center pt-3 lg:start-[20vw] flex-col lg:relative w-full lg:w-[75vw] mb-10'>
+                <h2 className='text-3xl'>Check Number</h2>
+                <div className="lg:m-10 w-full lg:w-[1100px] flex justify-around items-center rounded-lg bg-white lg:relative lg:start-5 p-3 mb-4">
                     <div className="flex flex-wrap w-[1000px]">
                         {getNumber.map((el, index) => (
                             
@@ -36,7 +36,7 @@ const CheckNumber = () => {
                             />
                         ))}
                     </div>
-                    <div className="hidden sm:block">
+                    <div className="hidden lg:block">
                         {Array.from({ length:  count/40}, (_, index) => (
                             <p key={index} className='my-[17.6px]'>Row {index + 1}</p>
                         ))}
