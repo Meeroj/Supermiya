@@ -30,11 +30,6 @@ const SpeedNumberLook = ({time}) => {
         };
 
         window.addEventListener('keydown', handleKeyDown);
-        window.addEventListener('click', ()=>{
-            setNumberBg(prev => (prev + 2) % count);
-        })
-    
-
 
         return () => {
             window.removeEventListener('keydown', handleKeyDown)
@@ -82,13 +77,23 @@ const SpeedNumberLook = ({time}) => {
     const handleFinish=()=>{
         dispatch(numberFinishing())
     }
+    const handleNext=()=>{
+        setNumberBg(prev => (prev + 2) % count);
+    
+    }
+    
+    const handlePerv=()=>{
+        setNumberBg(prev => (prev - 2 + count) % count); 
+
+    }
 
     return (
         isNumberStart ? (
             <div className='flex items-center pt-3 lg:start-[20vw] flex-col lg:relative w-full lg:w-[75vw] mb-10'>
                 <h2 className='text-3xl'>Speed Number 5 minut</h2>
+                <p className='lg:hidden w-[40px] h-[40px] rounded-full border bg-amber-400 opacity-40 sticky top-80 left-full' onClick={handlePerv}>-</p>
                 <div className="lg:m-10 w-full lg:w-[1100px] flex justify-around items-center rounded-lg bg-white lg:relative lg:start-5 p-3 mb-4">
-                    <div className="flex flex-wrap lg:w-[1000px]">
+                    <div className="flex flex-wrap lg:w-[1000px]" onClick={handleNext}>
                         {number.map((el, index) => (
                             <p key={index} className={`w-[25px] text-center my-1 sm:my-2 ${index === numberBg || index - 1 === numberBg ? 'bg-amber-400' : ''}`}>
                                 {el}
