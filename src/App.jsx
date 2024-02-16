@@ -9,6 +9,8 @@ import BinarNumberLook from "./components/BinarNumber/BinarNumberLook"
 import BinarNumber from "./pages/BinarNumber"
 import Face from "./pages/Face"
 import FindCard from "./pages/FindCard"
+import Login from "./pages/Login"
+import { Account } from "./pages/Account"
 
 
 
@@ -16,14 +18,17 @@ import FindCard from "./pages/FindCard"
 function App() {
 
   const {numberTime}=useSelector(state=>state.number)
+  const {isUser}=useSelector(state=>state.user)
 
   return (
     <>
-    <Sidebar/>
+    {localStorage.getItem('user')||isUser?
     <div className="">
+    <Sidebar/>
     <Routes>
         <Route path="/">
           <Route index element={<Main />} />
+          <Route path="/account" element={<Account />} />
           <Route path="/speed-number" element={<SpeedNumber/>}/>
           <Route path="speed-number/look" element={<SpeedNumberLook time={numberTime}/>}/>
           <Route path="check-number" element={<CheckNumber/>} />
@@ -34,6 +39,9 @@ function App() {
         </Route>
     </Routes>
     </div>
+    :
+    <Login/>
+  }
     </>
   )
 }

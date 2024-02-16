@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const numberSlice = createSlice({
-  name: "article",
+  name: "Number",
   initialState,
   reducers: {
     setNumber: (state, action) => {
