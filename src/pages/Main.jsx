@@ -1,30 +1,40 @@
-import React from 'react'
-import Card from '../components/Card'
+import React, { useState } from 'react';
+import CircularProgressBar from '../components/ProgressBar';
+import AttendanceTracker from '../components/AttandenceTracker';
+import WorkCalendar from '../components/WorkData';
 
 const Main = () => {
+
   return (
     <div className='flex flex-wrap justify-between p-5 relative w-full lg:w-[75vw] lg:start-[20vw] mb-5'>
-     <div className="flex flex-wrap gap-6 mb-5">
-     <Card
-          title="Supermiya Kursi"
-          description="Bu kurs bilan siz "
-          imageUrl="https://sharpagain.org/wp-content/uploads/2021/05/Glowing-brain_35601415_xl-2015-1-e1620183426206.jpg"
-        />
-        <Card
-          title="Supermiya Kursi"
-          description="Bu kurs bilan siz "
-          imageUrl="https://sunmag.me/wp-content/uploads/2016/03/analitik1.jpg"
-        />
-        <Card
-          title="Supermiya Kursi"
-          description="Bu kurs bilan siz "
-          imageUrl="https://sharpagain.org/wp-content/uploads/2021/05/Glowing-brain_35601415_xl-2015-1-e1620183426206.jpg"
-        />
-     </div>
-        
-       <img src="./img/davronTurdiyev.jpg" className='lg:w-[75vw] rounded-xl' alt="" />
+    <div className="container mx-auto">
+      <h1 className="text-3xl font-regular mb-8">Attendance Tracker</h1>
+      <div className="grid grid-cols-1 gap-4">
+        <AttendanceTracker/>
+          <div
+            className={`bg-white rounded-lg p-6 shadow-md flex justify-around`}
+          >
+            <div>
+            <h2 className="text-xl font-bold mb-2">Quality </h2>
+            <CircularProgressBar progress={60}/>
+            <p>Record result per: <span className='text-xl ms-3'> 52 <span className='text-sm'>5min</span></span></p>
+            </div>
+            <div>
+            <h2 className="text-xl font-bold mb-2">Speed  </h2>
+            <CircularProgressBar progress={80}/>
+            <p>Record result per: <span className='text-xl ms-3'> 52 <span className='text-sm'>5min</span></span></p>
+            </div>
+            <div>
+            <h2 className="text-xl font-bold mb-2">Memory  </h2>
+            <CircularProgressBar progress={70}/>
+            <p>Record result per: <span className='text-xl ms-3'> 52 <span className='text-sm'>5min</span></span></p>
+            </div>
+          </div>
+          <WorkCalendar/>
+      </div>
     </div>
-  )
-}
+  </div>
+  );
+};
 
-export default Main
+export default Main;
