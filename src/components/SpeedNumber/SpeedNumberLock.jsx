@@ -7,7 +7,7 @@ const SpeedNumberLook = ({time}) => {
     const dispatch = useDispatch()
     const [rowNumberCount, setRowNumberCount] = useState([]);
     const [numberBg, setNumberBg] = useState(0);
-    const {number, isNumberStart} = useSelector(state => state.number)
+    const {number, isNumberStart, system} = useSelector(state => state.number)
     
     const dep = 12
     let count=0
@@ -23,9 +23,9 @@ const SpeedNumberLook = ({time}) => {
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === 'ArrowRight') {
-                setNumberBg(prev => (prev + 2) % count);
+                setNumberBg(prev => (prev + system) % count);
             } else if (e.key === 'ArrowLeft') {
-                setNumberBg(prev => (prev - 2 + count) % count); 
+                setNumberBg(prev => (prev - system + count) % count); 
             }
         };
 
@@ -78,12 +78,12 @@ const SpeedNumberLook = ({time}) => {
         dispatch(numberFinishing())
     }
     const handleNext=()=>{
-        setNumberBg(prev => (prev + 2) % count);
+        setNumberBg(prev => (prev + system) % count);
     
     }
     
     const handlePerv=()=>{
-        setNumberBg(prev => (prev - 2 + count) % count); 
+        setNumberBg(prev => (prev - system + count) % count); 
 
     }
 
@@ -95,7 +95,7 @@ const SpeedNumberLook = ({time}) => {
                 <div className="lg:m-10 w-full lg:w-[1100px] flex justify-around items-center rounded-lg bg-white lg:relative lg:start-5 p-3 mb-4">
                     <div className="flex flex-wrap lg:w-[1000px]" onClick={handleNext}>
                         {number.map((el, index) => (
-                            <p key={index} className={`w-[25px] text-center my-1 sm:my-2 ${index === numberBg || index - 1 === numberBg ? 'bg-amber-400' : ''}`}>
+                            <p key={index} className={`w-[25px] text-center my-1 sm:my-2 ${index === numberBg ||(( index - (system) < numberBg)&&(numberBg<index))? 'bg-amber-400' : ''}`}>
                                 {el}
                             </p>
                         ))}

@@ -1,0 +1,14 @@
+{
+    "images":{
+        "logo":"./img/logo.png",
+        "binar":"./img/binar.svg",
+        "bars":"./img/bars.png",
+        "square":"./img/0-square.svg",
+        "card":"./img/card.svg",
+        "clock":"./img/clock.svg",
+        "davronTurdiyev":"./img/davronTurdiyev.jpg",
+        "face":"./img/face.svg",
+        "home":"./img/home.svg",
+        "user":"./img/user.svg"
+    }
+}

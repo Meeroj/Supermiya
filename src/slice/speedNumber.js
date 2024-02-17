@@ -27,6 +27,7 @@ export const numberSlice = createSlice({
     },
     setSystem: (state, action) => {
       state.system = action.payload;
+      console.log("first");
     },
   },
 });

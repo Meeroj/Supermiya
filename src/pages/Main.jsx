@@ -12,7 +12,7 @@ const Main = () => {
       <div className="grid grid-cols-1 gap-4">
         <AttendanceTracker/>
           <div
-            className={`bg-white rounded-lg p-6 shadow-md flex justify-around`}
+            className={`bg-white rounded-lg p-6 shadow-md flex flex-wrap justify-around`}
           >
             <div>
             <h2 className="text-xl font-bold mb-2">Quality </h2>
