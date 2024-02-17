@@ -23,9 +23,9 @@ const SpeedNumberLook = ({time}) => {
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === 'ArrowRight') {
-                setNumberBg(prev => (prev + system) % count);
+                setNumberBg(prev => (Number(prev)+Number(system))%count);
             } else if (e.key === 'ArrowLeft') {
-                setNumberBg(prev => (prev - system + count) % count); 
+                setNumberBg(prev => (prev - system+count)%count); 
             }
         };
 
@@ -95,7 +95,7 @@ const SpeedNumberLook = ({time}) => {
                 <div className="lg:m-10 w-full lg:w-[1100px] flex justify-around items-center rounded-lg bg-white lg:relative lg:start-5 p-3 mb-4">
                     <div className="flex flex-wrap lg:w-[1000px]" onClick={handleNext}>
                         {number.map((el, index) => (
-                            <p key={index} className={`w-[25px] text-center my-1 sm:my-2 ${index === numberBg ||(( index - (system) < numberBg)&&(numberBg<index))? 'bg-amber-400' : ''}`}>
+                            <p key={index} className={`w-[25px] text-center my-1 sm:my-2 ${index === numberBg ||(( index - (system) < numberBg)&&(numberBg<index))? 'bg-amber-400' : ''}`} >
                                 {el}
                             </p>
                         ))}
@@ -126,7 +126,6 @@ const SpeedNumberLook = ({time}) => {
                     </div>
                     <div className="hidden lg:block">
                         {Array.from({ length: count/40 }, (_, index) => (<>
-                        {console.log(count)}
                             <p key={index} className='my-[17.6px]'>Row {index + 1}</p>
                         </>
                         ))}
