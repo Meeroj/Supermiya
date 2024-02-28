@@ -15,7 +15,9 @@ import { Account } from "./pages/Account"
 
 
 
+
 function App() {
+
 
   const {numberTime}=useSelector(state=>state.number)
   const {isUser}=useSelector(state=>state.user)
@@ -23,7 +25,7 @@ function App() {
   return (
     <>
     {localStorage.getItem('user')||isUser?
-    <div className="">
+    <div className=" pointer-events-none">
     <Sidebar/>
     <Routes>
         <Route path="/">
